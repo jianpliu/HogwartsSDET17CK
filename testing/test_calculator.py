@@ -36,7 +36,7 @@ class TestCalc():
     def teardown_class(self):
         print("结束计算")
 
-    @pytest.mark.login
+    @pytest.mark.login #和pytest.ini结合使用
     @pytest.mark.parametrize("a,b,result",add_int_data[0],ids=add_int_data[1])
     def test_add(self,a,b,result):
         print(f"a={a},b={b},result={result}")
