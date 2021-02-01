@@ -22,6 +22,8 @@ class TestCalc():
     add_decimal_data = get_datas('add','decimal')
     div_int_data = get_datas('div','int_normal')
     div_zero_data= get_datas('div','int_error')
+    div_combination = get_datas('div','int_normal_and_error')
+
 
 
 
@@ -57,6 +59,21 @@ class TestCalc():
     def test_div_zero(self, a, b, result):
         with pytest.raises(ZeroDivisionError):
             result = a/b
+#遇到分母为0时的2种处理方法，最好让用例尽量简单，不要混合写在一起
+    @pytest.mark.parametrize("a,b,result", div_combination[0], ids=div_combination[1])
+    def test_div_normal_and_zero(self, a, b, result):
+        if b==0:
+            with pytest.raises(ZeroDivisionError) as excinfo:
+                self.calc.div(a,b)
+            #断言异常类型type
+            assert  excinfo.type==ZeroDivisionError
+            #断言异常类型value值
+            assert "division by zero" in str(excinfo.value)
+        else:
+            assert result==self.calc.div(a,b)
+
+
+
 
 if __name__=="__main__":
     # pytest.main("test_calculator.py::test_div_zero","vs")
