@@ -1,19 +1,26 @@
 add:
- datas:
-  - [1,1,2]
-  - [100, 400, 500]
-  - [1, 0, 1]
-  - [0.1, 0.1, 0.2]
-  - [-1,1,0]
-  - [99999999999999,-99999999999999,0]
- ids: ['int','bignum','zero','decimal','minus','verybig']
+ int:
+  datas:
+     - [1,1,2]
+     - [100, 400, 500]
+     - [1, 0, 1]
+     - [-1,1,0]
+     - [99999999999999,-99999999999999,0]
+  ids: ['int','bignum','zero','minus','verybig']
+ decimal:
+  datas:
+    - [0.2,0.1,0.3]
+    - [-0.1,-0.1,-0.2]
+  ids: ['decimal','minus decimal']
 div:
- datas:
-  - [2, 1, 2]
-  - [4, 5, 0.8]
-  - [1, 0, "error"]
-  - [0, 1, 0]
-  - [0.1, 0.2, 0.5]
-  - [0.5, 2, 0.25]
-  - [4, 0.5, 8]
- ids: ['int:a>b','int:a<b','b is 0','a is 0','two decimals','a is decimal,b is int','a is int,b is decimal']
+ int_normal:
+  datas:
+      - [1,1,1]
+      - [100,2,50]
+  ids: ['int','bignum']
+ int_error:
+  datas:
+     - [1,0,1]
+     - [-1,0,1]
+     - [0,0,1]
+  ids: ['num/zero','num/zero1','zero-zero']
