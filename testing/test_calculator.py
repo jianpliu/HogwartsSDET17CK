@@ -34,12 +34,13 @@ class TestCalc():
     def teardown_class(self):
         print("结束计算")
 
+    @pytest.mark.login
     @pytest.mark.parametrize("a,b,result",add_int_data[0],ids=add_int_data[1])
     def test_add(self,a,b,result):
         print(f"a={a},b={b},result={result}")
         assert result == self.calc.add(a,b)
 
-
+    @pytest.mark.search
     @pytest.mark.parametrize("a,b,result",add_decimal_data[0],ids=add_decimal_data[1])
     def test_add_decimal(self,a,b,result):
         print(f"a={a},b={b},result={result}")
@@ -56,6 +57,10 @@ class TestCalc():
     def test_div_zero(self, a, b, result):
         with pytest.raises(ZeroDivisionError):
             result = a/b
+
+if __name__=="__main__":
+    # pytest.main("test_calculator.py::test_div_zero","vs")
+    pytest.main("test_calculator.py","vs")
 
 
 

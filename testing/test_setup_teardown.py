@@ -23,7 +23,7 @@ def setup_function():
     print("资源准备: setup function")
 
 def teardown_function():
-    print("资源准备: steardown function")
+    print("资源准备: teardown function")
 
 class TestDemo:
     #执行类 前后分别执行setup_class teardown_class
