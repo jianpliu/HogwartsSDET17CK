@@ -19,13 +19,13 @@ def get_datas(name,type='int'):
 
 
 
-#———————————————可以把这个写在conftest里边————————————————
-# @pytest.fixture()#session :工程级    module：模块级      class:类级    默认是方法级
-# def get_instance():
-#     print("开始计算")
-#     calc=Calculator()
-#     yield calc
-#     print("结束计算")
+#———————————————也可以把这个写在conftest里边————————————————
+@pytest.fixture()#session :工程级    module：模块级      class:类级    默认是方法级
+def get_instance():
+    print("开始计算")
+    calc=Calculator()
+    yield calc
+    print("结束计算")
 
 
 
