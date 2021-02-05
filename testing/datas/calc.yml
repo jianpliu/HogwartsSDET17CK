@@ -6,7 +6,7 @@ add:
      - [1, 0, 1]
      - [-1,1,0]
      - [99999999999999,-99999999999999,0]
-  ids: ['int','bignum','zero','minus','verybig']
+  ids: ['整数','bignum','zero','minus','verybig']
  decimal:
   datas:
     - [0.2,0.1,0.3]

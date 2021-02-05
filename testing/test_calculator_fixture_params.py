@@ -11,7 +11,7 @@ print(sys.path)
 from pythoncode.Calculator import Calculator
 
 def get_datas(name,type='int'):
-    with open("./datas/calc.yml") as f:
+    with open("./datas/calc.yml",encoding='utf-8') as f:
         all_datas=yaml.safe_load(f)
     datas=all_datas[name][type]['datas']
     ids=all_datas[name][type]['ids']
@@ -75,7 +75,7 @@ class TestCalc():
 
     @pytest.mark.login #和pytest.ini结合使用
     # @pytest.mark.parametrize("a,b,result",add_int_data[0],ids=add_int_data[1])
-    def test_add(self,get_instance,get_date_with_fixture):
+    def test_add(self,login,get_instance,get_date_with_fixture): #这里要在函数参数中写上login,才能使用；conftest要写上@pytest.fixture(scope = "session")才行
         f=get_date_with_fixture
         print(f"a={f[0]},b={f[1]},result={f[2]}")
         assert f[2] == get_instance.add(f[0],f[1])
