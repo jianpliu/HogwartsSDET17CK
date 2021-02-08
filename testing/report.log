@@ -1,0 +1,8 @@
+Sun, 07 Feb 2021 17:38:58 __init__.py[line:28)] INFOitem.name:test_add[verybig]
+Sun, 07 Feb 2021 17:38:58 __init__.py[line:29)] INFOitem._nodeid:test_calculator_fixture_params.py::TestCalc::test_add[verybig]
+Sun, 07 Feb 2021 17:38:58 __init__.py[line:28)] INFOitem.name:test_add[minus]
+Sun, 07 Feb 2021 17:38:58 __init__.py[line:29)] INFOitem._nodeid:test_calculator_fixture_params.py::TestCalc::test_add[minus]
+Sun, 07 Feb 2021 17:38:58 __init__.py[line:28)] INFOitem.name:test_add[zero]
+Sun, 07 Feb 2021 17:38:58 __init__.py[line:29)] INFOitem._nodeid:test_calculator_fixture_params.py::TestCalc::test_add[zero]
+Sun, 07 Feb 2021 17:38:58 __init__.py[line:28)] INFOitem.name:test_add[bignum]
+Sun, 07 Feb 2021 17:38:58 __init__.py[line:29)] INFOitem._nodeid:test_calculator_fixture_params.py::TestCalc::test_add[bignum]

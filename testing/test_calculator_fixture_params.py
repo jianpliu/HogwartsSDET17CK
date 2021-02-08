@@ -10,49 +10,50 @@ print(sys.path)
 
 from pythoncode.Calculator import Calculator
 
-def get_datas(name,type='int'):
-    with open("./datas/calc.yml",encoding='utf-8') as f:
-        all_datas=yaml.safe_load(f)
-    datas=all_datas[name][type]['datas']
-    ids=all_datas[name][type]['ids']
-
-
-    return (datas,ids)
+# def get_datas(name,type='int'):
+#     with open("./datas/calc.yml",encoding="utf-8") as f:
+#         all_datas=yaml.safe_load(f)
+#     datas=all_datas[name][type]['datas']
+#     ids=all_datas[name][type]['ids']
+#
+#
+#     return (datas,ids)
 
 
 
 #———————————————也可以把这个写在conftest里边————————————————
-@pytest.fixture()#session :工程级    module：模块级      class:类级    function 默认是方法级
-def get_instance():
-    print("开始计算")
-    calc=Calculator()
-    yield calc
-    print("结束计算")
+# @pytest.fixture()#session :工程级    module：模块级      class:类级    function 默认是方法级
+# def get_instance():
+#     print("开始计算")
+#     calc=Calculator()
+#     yield calc
+#     print("结束计算")
 
-@pytest.fixture(params=get_datas("add","int")[0],ids=get_datas("add","int")[1])
-def get_date_with_fixture(request):
-    return request.param
-
-@pytest.fixture(params=get_datas("add","decimal")[0],ids=get_datas("add","decimal")[1])
-def get_date_with_fixture_for_add_decimal(request):
-    return request.param
-
-@pytest.fixture(params=get_datas("div","int_normal")[0],ids=get_datas("div","int_normal")[1])
-def get_date_with_fixture_for_div_int(request):
-    return request.param
-
-@pytest.fixture(params=get_datas("div","int_error")[0],ids=get_datas("div","int_error")[1])
-def get_date_with_fixture_for_div_zero(request):
-    return request.param
-
-@pytest.fixture(params=get_datas("div", "int_normal_and_error")[0],ids=get_datas("div", "int_normal_and_error")[1])
-def get_date_with_fixture_for_div_combination(request):
-    return request.param
+# @pytest.fixture(params=get_datas("add","int")[0],ids=get_datas("add","int")[1])
+# def get_date_with_fixture(request):
+#     return request.param
+#
+# @pytest.fixture(params=get_datas("add","decimal")[0],ids=get_datas("add","decimal")[1])
+# def get_date_with_fixture_for_add_decimal(request):
+#     return request.param
+#
+# @pytest.fixture(params=get_datas("div","int_normal")[0],ids=get_datas("div","int_normal")[1])
+# def get_date_with_fixture_for_div_int(request):
+#     return request.param
+#
+# @pytest.fixture(params=get_datas("div","int_error")[0],ids=get_datas("div","int_error")[1])
+# def get_date_with_fixture_for_div_zero(request):
+#     return request.param
+#
+# @pytest.fixture(params=get_datas("div", "int_normal_and_error")[0],ids=get_datas("div", "int_normal_and_error")[1])
+# def get_date_with_fixture_for_div_combination(request):
+#     return request.param
 
 
 
 
 #测试类
+@allure.feature("计算器")
 class TestCalc():
     # add_int_data = get_datas('add','int')
     # add_decimal_data = get_datas('add','decimal')
@@ -71,16 +72,16 @@ class TestCalc():
     # # 后置条件
     # def teardown_class(self):
     #     print("结束计算")
-
-
-    @pytest.mark.login #和pytest.ini结合使用
+    @allure.title("相加_{get_date_with_fixture}")
+    @allure.story("相加功能-整数")
+    # @pytest.mark.login #和pytest.ini结合使用
     # @pytest.mark.parametrize("a,b,result",add_int_data[0],ids=add_int_data[1])
     def test_add(self,login,get_instance,get_date_with_fixture): #这里要在函数参数中写上login,才能使用；conftest要写上@pytest.fixture(scope = "session")才行
         f=get_date_with_fixture
         print(f"a={f[0]},b={f[1]},result={f[2]}")
         assert f[2] == get_instance.add(f[0],f[1])
 
-    @pytest.mark.search
+    # @pytest.mark.search
     # @pytest.mark.parametrize("a,b,result",add_decimal_data[0],ids=add_decimal_data[1])
     def test_add_decimal(self,get_instance,get_date_with_fixture_for_add_decimal):
         f=get_date_with_fixture_for_add_decimal

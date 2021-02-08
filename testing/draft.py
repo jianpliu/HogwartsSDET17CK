@@ -4,6 +4,8 @@ import os
 #
 # print(os.path.abspath(os.path.join(os.getcwd(), "..")))
 # print("***********")
-# import sys,yaml
-# sys.path.append('..')
-# print(sys.path)
+import sys,yaml
+
+print(sys.path)
+sys.path.append('..')
+print(sys.path)
