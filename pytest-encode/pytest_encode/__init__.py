@@ -18,15 +18,16 @@ logger=logging.getLogger(__name__)
 
 
 
-# def pytest_collection_modifyitems(
-#     session: "Session", config: "Config", items: List["Item"]
-# ) -> None:
-#     print(items)
-#     for item in items:
-#         item.name=item.name.encode('utf-8').decode('unicode_escape')
-#         item._nodeid=item.nodeid.encode('utf-8').decode('unicode_escape')
-#         logger.info(f"item.name:{item.name}")
-#         logger.info(f"item._nodeid:{item._nodeid}")
+def pytest_collection_modifyitems(
+    session: "Session", config: "Config", items: List["Item"]
+) -> None:
+    print(items)
+    for item in items:
+        item.name=item.name.encode('utf-8').decode('unicode_escape')
+        item._nodeid=item.nodeid.encode('utf-8').decode('unicode_escape')
+        logger.info(f"item.name:{item.name}")
+        logger.info(f"item._nodeid:{item._nodeid}")
+
 
 
 

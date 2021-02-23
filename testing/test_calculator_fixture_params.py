@@ -77,7 +77,7 @@ class TestCalc():
     # @pytest.mark.login #和pytest.ini结合使用
     # @pytest.mark.parametrize("a,b,result",add_int_data[0],ids=add_int_data[1])
     def test_add(self,login,get_instance,get_date_with_fixture): #这里要在函数参数中写上login,才能使用；conftest要写上@pytest.fixture(scope = "session")才行
-        f=get_date_with_fixture
+        f=get_date_with_fixture                                  #这里的get_date_with_fixture是传参，传参不用写括号；要是写了括号就是调用了，这是python的语法特点
         print(f"a={f[0]},b={f[1]},result={f[2]}")
         assert f[2] == get_instance.add(f[0],f[1])
 

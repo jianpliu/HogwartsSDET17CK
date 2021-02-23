@@ -6,6 +6,8 @@
 import datetime
 from typing import List
 import pytest,sys,yaml
+from pytest_encode import logger
+
 sys.path.append('..')
 from pythoncode.Calculator import Calculator
 # conftest.py 文件名字是固定的，不能改
@@ -27,7 +29,7 @@ def get_instance():
 
 
 def get_datas(name, type='int'):
-    with open("./datas/calc.yml", encoding="utf-8") as f:
+    with open("./datas/calc.yml", encoding='utf-8') as f:
         all_datas = yaml.safe_load(f)
     datas = all_datas[name][type]['datas']
     ids = all_datas[name][type]['ids']
@@ -56,13 +58,26 @@ def get_date_with_fixture_for_div_combination(request):
     return request.param
 
 
-def pytest_collection_modifyitems(
-    session: "Session", config: "Config", items: List["Item"]
-) -> None:
-    print(items)
-    for item in items:
-        item.name=item.name.encode('utf-8').decode('unicode_escape')
-        item._nodeid=item.nodeid.encode('utf-8').decode('unicode_escape')
-        if 'add' in item._nodeid:
-            item.add_marker(pytest.mark.add)  #加标签add
-    items.reverse()
+# def pytest_collection_modifyitems(
+#     session: "Session", config: "Config", items: List["Item"]
+# ) -> None:
+#     print(items)
+#     for item in items:
+#         item.name=item.name.encode('utf-8').decode('unicode_escape')
+#         item._nodeid=item.nodeid.encode('utf-8').decode('unicode_escape')
+#         logger.info(f"item.name:{item.name}")
+#         logger.info(f"item._nodeid:{item._nodeid}")
+#         if 'add' in item._nodeid:
+#             item.add_marker(pytest.mark.add)  #加标签add
+#     items.reverse()
+
+
+# def pytest_collection_modifyitems(
+#     session: "Session", config: "Config", items: List["Item"]
+# ) -> None:
+#     print(items)
+# # #     for item in items:
+# # #         item.name=item.name.encode('utf-8').decode('unicode_escape')
+# # #         item._nodeid=item.nodeid.encode('utf-8').decode('unicode_escape')
+# # #         logger.info(f"item.name:{item.name}")
+# # #         logger.info(f"item._nodeid:{item._nodeid}")
