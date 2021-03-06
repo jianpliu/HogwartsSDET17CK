@@ -1,0 +1,4 @@
+Sat, 06 Mar 2021 18:52:43 __init__.py[line:28)] INFOitem.name:test_adduser[cc1-19999999999]
+Sat, 06 Mar 2021 18:52:43 __init__.py[line:29)] INFOitem._nodeid:test_addmember.py::TestDemo::test_adduser[cc1-19999999999]
+Sat, 06 Mar 2021 18:52:43 __init__.py[line:28)] INFOitem.name:test_adduser[cc2-19999999998]
+Sat, 06 Mar 2021 18:52:43 __init__.py[line:29)] INFOitem._nodeid:test_addmember.py::TestDemo::test_adduser[cc2-19999999998]
