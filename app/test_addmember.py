@@ -38,9 +38,12 @@ class TestDemo:
         # self.driver.find_element(By.XPATH,"//*[@text='通讯录']").click()
         # self.driver.find_element(By.XPATH, "//*[@text='添加成员']").click()
         self.driver.find_element(By.XPATH, "//*[@text='手动输入添加']").click()
-        name=self.driver.find_elements(By.XPATH,"//android.widget.ScrollView//android.widget.EditText")[0]
+        # name=self.driver.find_elements(By.XPATH,"//android.widget.ScrollView//android.widget.EditText")[0]
+        # name = self.driver.find_element(By.XPATH, "//*[@text='姓名　']/../*[@text='必填']")
+        name = self.driver.find_element(By.XPATH, "//*[contains(@text,'姓名')]/../android.widget.EditText")
         name.send_keys(names)
-        tele=self.driver.find_elements(By.XPATH,"//android.widget.ScrollView//android.widget.EditText")[1]
+        # tele=self.driver.find_elements(By.XPATH,"//android.widget.ScrollView//android.widget.EditText")[1]
+        tele = self.driver.find_element(By.XPATH, "//*[contains(@text, '手机')]/..//*[@text='必填']")
         tele.send_keys(telephone)
         self.driver.find_element(By.XPATH, "//*[@text='保存']").click()
         # print(self.driver.page_source)
