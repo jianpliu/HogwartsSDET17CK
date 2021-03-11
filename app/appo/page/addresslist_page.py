@@ -3,6 +3,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 from app.appo.page.addcontact_page import AddContactPage
 from app.appo.page.base_page import BasePage
+from app.appo.page.searchname_page  import SearchPage
 
 
 class AddressListPage(BasePage):
@@ -36,3 +37,7 @@ class AddressListPage(BasePage):
     def click_addcontact(self):
         element = self.swipe_find("添加成员").click()
         return AddContactPage(self.driver)
+
+    def click_search(self):
+        self.driver.find_element(MobileBy.ID, "com.tencent.wework:id/igk").click()
+        return SearchPage(self.driver)

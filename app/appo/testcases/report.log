@@ -1,14 +1,6 @@
-Wed, 10 Mar 2021 11:52:37 __init__.py[line:28)] INFOitem.name:test_addcontact
-Wed, 10 Mar 2021 11:52:37 __init__.py[line:29)] INFOitem._nodeid:appo/testcases/test_contact.py::TestContact::test_addcontact
-Wed, 10 Mar 2021 11:53:10 base_page.py[line:18)] INFOfind
-Wed, 10 Mar 2021 11:53:10 base_page.py[line:19)] INFOxpath,//*[@text='通讯录']
-Wed, 10 Mar 2021 11:53:10 base_page.py[line:20)] INFOfind这是一条提示信息
-Wed, 10 Mar 2021 11:53:10 base_page.py[line:21)] INFOxpath,//*[@text='通讯录']这是一条提示信息
-Wed, 10 Mar 2021 11:53:41 base_page.py[line:46)] INFOset implicitly_wait:2
-Wed, 10 Mar 2021 11:53:46 base_page.py[line:46)] INFOset implicitly_wait:2
-Wed, 10 Mar 2021 11:53:49 base_page.py[line:46)] INFOset implicitly_wait:2
-Wed, 10 Mar 2021 11:53:53 base_page.py[line:46)] INFOset implicitly_wait:2
-Wed, 10 Mar 2021 11:53:59 base_page.py[line:34)] INFOfind and click
-Wed, 10 Mar 2021 11:53:59 base_page.py[line:35)] INFOxpath,//*[@text='保存']
-Wed, 10 Mar 2021 11:53:59 base_page.py[line:36)] INFOfind and click这是一条提示信息
-Wed, 10 Mar 2021 11:53:59 base_page.py[line:37)] INFOxpath,//*[@text='保存']这是一条提示信息
+Wed, 10 Mar 2021 22:01:45 __init__.py[line:28)] INFOitem.name:test_delecontact
+Wed, 10 Mar 2021 22:01:45 __init__.py[line:29)] INFOitem._nodeid:appo/testcases/test_contact.py::TestContact::test_delecontact
+Wed, 10 Mar 2021 22:02:16 base_page.py[line:18)] INFOfind
+Wed, 10 Mar 2021 22:02:16 base_page.py[line:19)] INFOxpath,//*[@text='通讯录']
+Wed, 10 Mar 2021 22:02:16 base_page.py[line:20)] INFOfind
+Wed, 10 Mar 2021 22:02:16 base_page.py[line:21)] INFOxpath,//*[@text='通讯录']

@@ -1,3 +1,7 @@
+# -*-coding:GBK -*-
+import time
+
+from appium.webdriver.common.mobileby import MobileBy
 
 from app.appo.page.app import App
 
@@ -20,6 +24,18 @@ class TestContact:
         editpage = self.main.goto_addressList().click_addcontact().addcontact_menual()
         editpage.edit_contact(name,phonenum)
         editpage.verify_ok()
+
+    def test_delecontact(self):
+        name = 'aaa2'
+        search_info = self.main.goto_addressList().click_search().input_search(name)
+        if search_info[1]>1:
+
+            dele_result = search_info[0].click_dot().edit_Info().dele_Info()
+            time.sleep(5)
+            now_count = dele_result.dele_ok(name)
+            assert now_count == search_info[1] - 1
+        else:
+            print("用户不存在")
 
 
 

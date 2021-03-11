@@ -35,7 +35,7 @@ class App(BasePage):
             # desired_caps['resetKeyBoard'] = True
             # 客户端与appium服务器建立连接的代码
             self.driver = webdriver.Remote(f'http://{ip}:{port}/wd/hub', desires)
-            self.driver.implicitly_wait(30)
+            self.driver.implicitly_wait(60)
             print("test!!!!!!!!!!!!!!!!")
         else:
             # self.driver.start_activity("com.tencent.wework",".launch.LaunchSplashActivity")

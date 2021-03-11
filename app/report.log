@@ -1,2 +1,3 @@
-Wed, 10 Mar 2021 11:39:21 __init__.py[line:28)] INFOitem.name:test_addcontact
-Wed, 10 Mar 2021 11:39:21 __init__.py[line:29)] INFOitem._nodeid:test_contact.py::TestDemo::test_addcontact
+Wed, 10 Mar 2021 18:02:08 __init__.py[line:28)] INFOitem.name:test_a
+Wed, 10 Mar 2021 18:02:08 __init__.py[line:29)] INFOitem._nodeid:test_draft.py::TestA::test_a
+Wed, 10 Mar 2021 18:02:08 test_draft.py[line:24)] INFOaaaaa

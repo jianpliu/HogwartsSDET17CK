@@ -6,6 +6,8 @@ from appium import webdriver
 from appium.webdriver.common.mobileby import MobileBy
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class TestDemo:
@@ -29,7 +31,7 @@ class TestDemo:
         # desired_caps['resetKeyBoard'] = True
         #客户端与appium服务器建立连接的代码
         self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
-        self.driver.implicitly_wait(8)
+        self.driver.implicitly_wait(60)
 
 
 
@@ -87,13 +89,31 @@ class TestDemo:
         self.driver.find_element(MobileBy.XPATH,"//*[@text='添加成功']")
 
     def test_delcontact(self):
+        name = "Hogwarts_0840"
         self.driver.find_element(MobileBy.XPATH,"//*[@text='通讯录']").click()
         self.driver.find_element(MobileBy.ID,"com.tencent.wework:id/igk").click()
-        self.driver.find_element(MobileBy.XPATH, "//*[@text='搜索']").send_keys("Hogwarts_11")
-        elelist = self.driver.find_elements(MobileBy.XPATH, "//*[@text='Hogwarts_11']")
+        self.driver.find_element(MobileBy.XPATH, "//*[@text='搜索']").send_keys(name)
+        WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((MobileBy.XPATH,"//*[@text='联系人']")))
+        elelist = self.driver.find_elements(MobileBy.XPATH, f"//*[@text='{name}']")
         #find_elements 方法返回的是一个列表[element1,element2,......]
-        if len(elelist)>1:
+        num_nodele=len(elelist)
+        if num_nodele>1:
             elelist[1].click()
+            self.driver.find_element(MobileBy.ID, "com.tencent.wework:id/iga").click()
+            self.driver.find_element(MobileBy.XPATH, "//*[@text='编辑成员']").click()
+            self.driver.find_element(MobileBy.XPATH, "//*[@text='删除成员']").click()
+            self.driver.find_element(MobileBy.XPATH, "//*[@text='确定']").click()
+            elelist = self.driver.find_elements(MobileBy.XPATH, f"//*[@text='{name}']")
+            num_dele = len(elelist)
+            if num_dele==num_nodele-1:
+                print("删除成功")
+
+
+
+
+
+
+
 
 
 
