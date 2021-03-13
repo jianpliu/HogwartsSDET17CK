@@ -1,0 +1,16 @@
+desired_caps:
+  'platformName': 'android'
+  'platformVersion': '6.0'
+  'deviceName': '127.0.0.1:7555'
+  'appPackage': 'com.xueqiu.android'
+  'appActivity': '.view.WelcomeActivityAlias'
+  'noReset': "True"  # Don't reset app state before this session.不清除缓存
+# desired_caps['settings[waitForIdleTimeout]'] = 1  # 动态页面的等待时间
+# 跳过安装uiautomator2server等服务
+  'skipServerInstallation': "true"
+# 跳过设备的初始化
+  'skipDeviceInitialization': "true"
+
+server:
+  ip: 127.0.0.1
+  port: 4723
