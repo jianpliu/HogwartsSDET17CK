@@ -1,2 +1,7 @@
-Sat, 13 Mar 2021 17:23:19 __init__.py[line:28)] INFOitem.name:test_goto_market
-Sat, 13 Mar 2021 17:23:19 __init__.py[line:29)] INFOitem._nodeid:test_market.py::TestMarket::test_goto_market
+Wed, 17 Mar 2021 18:01:28 __init__.py[line:28)] INFOitem.name:test_goto_market
+Wed, 17 Mar 2021 18:01:28 __init__.py[line:29)] INFOitem._nodeid:test_market.py::TestMarket::test_goto_market
+Wed, 17 Mar 2021 18:01:45 handle_black_list.py[line:13)] DEBUGfind//*[@resource-id="com.xueqiu.android:id/post_status"]
+Wed, 17 Mar 2021 18:01:54 handle_black_list.py[line:13)] DEBUGfind//*[@text="ÐÐÇé"]
+Wed, 17 Mar 2021 18:02:15 basepage.py[line:63)] DEBUGfinds//*[@resource-id="com.xueqiu.android:id/iv_close"]
+Wed, 17 Mar 2021 18:02:17 handle_black_list.py[line:13)] DEBUGfind//*[@resource-id="com.xueqiu.android:id/action_search"]
+Wed, 17 Mar 2021 18:02:19 handle_black_list.py[line:13)] DEBUGfind//*[@resource-id="com.xueqiu.android:id/search_input_text"]

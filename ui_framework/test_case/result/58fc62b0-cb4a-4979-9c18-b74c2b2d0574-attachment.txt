@@ -1,0 +1,7 @@
+INFO: scrcpy 1.17 <https://github.com/Genymobile/scrcpy>
+INFO: Recording started to mp4 file: tmp.mp4
+[2021-03-17 18:01:45,671 handle_black_list.py:13:run: find//*[@resource-id="com.xueqiu.android:id/post_status"]
+[2021-03-17 18:01:54,781 handle_black_list.py:13:run: find//*[@text="行情"]
+[2021-03-17 18:02:15,601 basepage.py:63:finds: finds//*[@resource-id="com.xueqiu.android:id/iv_close"]
+[2021-03-17 18:02:17,765 handle_black_list.py:13:run: find//*[@resource-id="com.xueqiu.android:id/action_search"]
+[2021-03-17 18:02:19,601 handle_black_list.py:13:run: find//*[@resource-id="com.xueqiu.android:id/search_input_text"]

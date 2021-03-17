@@ -1,0 +1,5 @@
+DEBUG    my_log:handle_black_list.py:13 find//*[@resource-id="com.xueqiu.android:id/post_status"]
+DEBUG    my_log:handle_black_list.py:13 find//*[@text="行情"]
+DEBUG    my_log:basepage.py:63 finds//*[@resource-id="com.xueqiu.android:id/iv_close"]
+DEBUG    my_log:handle_black_list.py:13 find//*[@resource-id="com.xueqiu.android:id/action_search"]
+DEBUG    my_log:handle_black_list.py:13 find//*[@resource-id="com.xueqiu.android:id/search_input_text"]
