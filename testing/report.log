@@ -1,0 +1,4 @@
+Fri, 05 Mar 2021 09:24:08 __init__.py[line:28)] INFOitem.name:test_search[aaa]
+Fri, 05 Mar 2021 09:24:08 __init__.py[line:29)] INFOitem._nodeid:test_fixture_param.py::test_search[aaa]
+Fri, 05 Mar 2021 09:24:08 __init__.py[line:28)] INFOitem.name:test_search[bbb]
+Fri, 05 Mar 2021 09:24:08 __init__.py[line:29)] INFOitem._nodeid:test_fixture_param.py::test_search[bbb]
