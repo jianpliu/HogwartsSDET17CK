@@ -1,6 +1,6 @@
 import requests
 def request_demo():
-    res = requests.request(method="POST",url="https://ceshiren.com/message-bus/e628d681137244f49af4da5f93195993/poll?dlp=t")
+    res = requests.request(method="POST",url="http://211.103.164.29:8081/oa/rest/workDetail/gscx")
 
 
 if __name__=='__main__':
